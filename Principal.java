@@ -115,6 +115,10 @@ public class Principal
             for(int j=0;j<ubicaciones.size();j++){
                 if(ubicaciones.get(i).getDistanciaA()>ubicaciones.get(j).getDistanciaA()){
                      p++;   
+                }else if((ubicaciones.get(i).getDistanciaA()>=ubicaciones.get(j).getDistanciaA())){
+                    if(((ubicaciones.get(i).getCantidadZ())>(ubicaciones.get(j).getCantidadZ() ))){
+                    p++;
+                }
                 }
             }
             ubicaciones2[p]=ubicaciones.get(i);
@@ -122,7 +126,9 @@ public class Principal
         }
         System.out.println("Las ubicaciones de la mas cercana a la mas lejana son:");
         for(int i=0;i<ubicaciones.size();i++){
+            if(ubicaciones2[i]!=null){
             System.out.println("El nombre de la ubicacion es: "+ubicaciones2[i].getNombre()+" La distancia a Alexandria es: "+ubicaciones2[i].getDistanciaA()+"m La cantidad de zombies en la ubicacion es: "+ ubicaciones2[i].getCantidadZ());
+        }
         }
     }
     public void zombieLista(){
